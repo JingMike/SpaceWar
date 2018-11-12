@@ -1,0 +1,31 @@
+{
+  "ver": "2.2.0",
+  "uuid": "4e94ec5e-b47d-4814-bca3-70934a9cfca8",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "subMetas": {
+    "StarSky": {
+      "ver": "1.0.3",
+      "uuid": "e84e8946-efd8-4ba3-87af-a889cf6f1c03",
+      "rawTextureUuid": "4e94ec5e-b47d-4814-bca3-70934a9cfca8",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 1000,
+      "height": 250,
+      "rawWidth": 1000,
+      "rawHeight": 250,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

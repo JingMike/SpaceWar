@@ -22,6 +22,18 @@ module.exports =
         tooltip: 'ตรทึ',
     },
 
+    playerInitX: 
+    {
+        default: 0,
+        type: cc.Integer,
+    },
+
+    playerInitY: 
+    {
+        default: 0,
+        type: cc.Integer,
+    },
+
     main: 
     {
         default: null,

@@ -44,8 +44,7 @@ cc.Class(
 
     onLoad () 
     {
-		Global.main = this;
-		Global.starSkyPosition = this.node.height/2;
+        this.initGlobal();
 		this.generateNewEnemy();
 	},
 
@@ -56,5 +55,12 @@ cc.Class(
     update (dt) 
     {
 	},
-	
+    
+    initGlobal()
+    {
+		Global.main = this;
+		Global.playerInitX = 0;
+		Global.playerInitY = -200;
+		Global.starSkyPosition = this.node.height/2;
+    }	
 });

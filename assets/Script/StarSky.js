@@ -1,5 +1,5 @@
 
-const Global = require('Global');
+var Global = require('Global');
 
 cc.Class(
 {

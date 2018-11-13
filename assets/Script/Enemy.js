@@ -20,7 +20,7 @@ cc.Class(
 
     update (dt) 
     {
-		this.node.y -= 100 * dt;
+		this.node.y -= this.getEnemySpeed() * dt;
 		var height = Global.main.node.height;
 		var width = Global.main.node.width;
 		if (this.node.y < -height)
@@ -30,4 +30,9 @@ cc.Class(
 			this.node.x = (ran-0.5)*2 * width;
 		}
 	},
+    
+    getEnemySpeed()
+    {
+        return 100;
+    },
 });

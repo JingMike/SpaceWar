@@ -13,8 +13,8 @@ cc.Class(
 
     onLoad () 
     {
-		this.node.x = 0;
-		this.node.y = -200;
+		this.node.x = Global.playerInitX;
+		this.node.y = Global.playerInitY;
 	},
 
     start () 

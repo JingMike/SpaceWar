@@ -7,20 +7,37 @@ cc.Class(
 
     properties: 
     {
-		StarSkyPool: 
+		starSkyPool: 
         {
 			default: [],
 			type: cc.NodePool
 		},
+        starSky: 
+        {
+            default: [],
+            type: cc.Prefab
+        },
     },
 
     // LIFE-CYCLE CALLBACKS:
 
+    generateSkyPieces()
+    {
+		for (var counter = 0; counter < Global.starSkyPieceNumber; counter++)
+        {
+            this.starSky[counter] = cc.instantiate(this.starSkyPrefab);
+            cc.log(counter);
+            cc.log(this.starSky[counter]);
+            cc.log(this.starSky[counter].node);
+        }
+    },
+    
     onLoad () 
     {
-		cc.log(this.node);
-		//this.starSky = cc.instantiate(this.starSkyPrefab);
-		Global.starSkyHeight = this.node.height;
+        cc.log("StarSky.onload.");
+
+		Global.starSkyPosition = Global.main.height/2;
+		Global.starSkyHeight = this.starSky[0].height;
 	},
 
     start () 
@@ -29,16 +46,18 @@ cc.Class(
 
     update (dt) 
     {
+        // Update the overall position.
 		Global.starSkyPosition -= this.systemSpeed/10 * dt;
-		var height = Global.main.node.height;
-		if (Global.starSkyPosition <= height/2)
+        
+		var maxPosY = Global.main.height;
+		if (Global.starSkyPosition >= maxPosY)
 		{
-			Global.starSkyPosition = height/2+Global.starSkyHeight;
+			Global.starSkyPosition = maxPosY/2;
 		}
 
-		for (var counter = 0; counter < 4; counter++)
+		for (var counter = 0; counter < Global.starSkyPieceNumber; counter++)
 		{
-				this.setPosition(0, Global.starSkyPosition-Global.starSkyHeight*counter);
+			this.starSky[counter].setPosition(0, Global.starSkyPosition-Global.starSkyHeight*counter);
 		}
 	},
 });

@@ -86,7 +86,6 @@ var MyBase = cc.Class(
             type: cc.Integer,
             tooltip: 'Z×ø±ê',
         },
-
     },
 });
 

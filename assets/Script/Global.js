@@ -5,21 +5,21 @@ module.exports =
     {
         default: 0,
         type: cc.Integer,
-        tooltip: '游戏难度',
+        tooltip: 'Game level',
     },
 
     systemSpeed: 
     {
         default: 0,
         type: cc.Integer,
-        tooltip: '游戏速度',
+        tooltip: 'Game speed',
     },
 
     score: 
     {
         default: 0,
         type: cc.Integer,
-        tooltip: '得分',
+        tooltip: 'Score',
     },
 
     playerInitX: 
@@ -38,6 +38,12 @@ module.exports =
     {
         default: null,
         type: cc.Node
+    },
+
+    starSkyPieceNumber: 
+    {
+        default: 0,
+        type: cc.Integer,
     },
 
     starSkyHeight: 

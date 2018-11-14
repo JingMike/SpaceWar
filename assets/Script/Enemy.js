@@ -12,6 +12,8 @@ cc.Class(
     // LIFE-CYCLE CALLBACKS:
     onLoad () 
     {
+        cc.log("Player.onload.");
+        cc.log("Global.main.height:"+Global.main.node.height);
 	},
 
     start () 
@@ -20,19 +22,20 @@ cc.Class(
 
     update (dt) 
     {
+        // Change Y position according to the speed.
 		this.node.y -= this.getEnemySpeed() * dt;
-		var height = Global.main.node.height;
-		var width = Global.main.node.width;
-		if (this.node.y < -height)
+
+        // Check for the screen border.
+		if (this.node.y < -Global.main.node.height / 2)
+            // Move to the top with random X position if it goes out of the screen bottom.
 		{
-			var ran = Math.random();
-			this.node.y = height;
-			this.node.x = (ran-0.5)*2 * width;
+			this.node.y = Global.main.node.height / 2;
+			this.node.x = (Math.random() - 0.5) * 2 * Global.main.node.width;
 		}
 	},
     
     getEnemySpeed()
     {
-        return 100;
+        return Global.systemSpeed /* + enenmy speep */;
     },
 });
